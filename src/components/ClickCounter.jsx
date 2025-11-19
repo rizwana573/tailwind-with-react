@@ -1,14 +1,8 @@
 import {Component} from "react";
+import withCounter from "./withCounter.jsx";
 
-class OldCounter extends Component {
-  constructor(props){
-    super(props);
-    this.state ={
-        count:0
-    }
-    this.id=null;
-    this.x=0;
-  }
+class ClickCounter extends Component {
+  
   
  /* componentDidMount(){
     console.log("component did mount");
@@ -25,23 +19,20 @@ class OldCounter extends Component {
   }*/
  render(){
     const name = this.props.name;
-    const count = this.state.count;
    return (
     <>
     <h2 className="text-bold text-xl my-4">{name}</h2>
-    <p className="text-bold">{`Count is: ${count}`}</p>
+    <p className="text-bold">{`Count is: ${this.props.count}`}</p>
       <button
         className="rounded px-4 py-2 m-2 bg-slate-300 cursor-pointer hover:bg-slate-400"
-        onClick={() => this.setState({count: count + 1})}
+        onClick={this.props.increaseCount}
       >
         Increase Count
       </button>
 
       <button
         className="rounded px-4 py-2 m-2 bg-slate-300 cursor-pointer hover:bg-slate-400"
-        onClick={function () {
-            this.setState({count: count - 1})}.bind(this)
-        }
+        onClick={this.props.decreaseCount}
       >
         Decrease Count
       </button>
@@ -51,4 +42,4 @@ class OldCounter extends Component {
 
 }
 
-export default OldCounter;
+export default withCounter(ClickCounter);

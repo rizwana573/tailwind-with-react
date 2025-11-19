@@ -1,5 +1,6 @@
 import Counter from "./Counter.jsx";
-import OldCounter from "./OldCounter.jsx";
+import ClickCounter from "./ClickCounter.jsx";
+import HoverCounter from "./HoverCounter.jsx";
 
 const Home = () => {
   return (
@@ -7,7 +8,8 @@ const Home = () => {
       <h1>Hii, Welcome to our site.</h1>
       {/* <Counter name="Functional Component Counter"></Counter>
       <hr className="my-4"></hr> */}
-      <OldCounter name="Class Component Counter"></OldCounter>
+      <ClickCounter name="Class Component Counter"></ClickCounter>
+       <HoverCounter name="Class Component Counter"></HoverCounter>
     </>
   );
 };
